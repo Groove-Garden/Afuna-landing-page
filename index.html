@@ -248,6 +248,41 @@
 
     .form-message.is-visible { display: block; }
 
+
+    .smoove-form-wrap {
+      width: 100%;
+      max-width: 410px;
+      margin: 0 auto;
+      display: grid;
+      justify-items: center;
+      overflow: hidden;
+      border-radius: 18px;
+      background: transparent;
+    }
+
+    .smoove-form-wrap iframe,
+    .smoove-iframe {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: 245px;
+      border: 0 !important;
+      display: block;
+      margin: 0 auto;
+      background: transparent;
+    }
+
+    .compact-cta {
+      grid-template-columns: auto;
+      justify-content: start;
+    }
+
+    .button-link {
+      display: inline-grid;
+      place-items: center;
+      text-decoration: none;
+      width: fit-content;
+    }
+
     .section { margin-top: clamp(28px, 5vw, 54px); }
 
     .benefits {
@@ -547,6 +582,8 @@
       }
 
       .compact-form .button { width: 100%; }
+      .compact-cta { justify-content: center; }
+      .button-link { width: 100%; }
     }
 
     @media (max-width: 420px) {
@@ -575,30 +612,21 @@
           <h1 id="hero-title">אהבתם את הסרטון על אפונה?</h1>
           <p class="lead">מחכה לכם מתנה חינמית להורדה – דפי צביעה וגזירה של דמות האפונה לפעילות כיפית של הורים וילדים יחד.</p>
 
-          <section class="signup-card" aria-labelledby="signup-title">
+          <section class="signup-card" id="signup" aria-labelledby="signup-title">
             <h2 id="signup-title">קבלו את הקובץ החינמי</h2>
-            <!--
-              חיבור אמיתי לדיוור:
-              החליפו את action בכתובת הטופס של Smoove / רב מסר / MailerLite,
-              או הטמיעו כאן את קוד הטופס שהמערכת נותנת.
-            -->
-            <form id="leadForm" action="#" method="post" data-demo="true">
-              <div class="field">
-                <label for="name">שם</label>
-                <input id="name" name="name" type="text" autocomplete="name" placeholder="שם" required />
-              </div>
-              <div class="field">
-                <label for="email">אימייל</label>
-                <input id="email" name="email" type="email" autocomplete="email" placeholder="אימייל" required />
-              </div>
-              <label class="consent">
-                <input type="checkbox" name="consent" required />
-                <span>אני מאשר/ת לקבל מגינה של גרוב את הקובץ החינמי ועדכונים במייל. ניתן להסיר הרשמה בכל עת.</span>
-              </label>
-              <button class="button" type="submit">שלחו לי את הקובץ</button>
-              <p class="note">מיד אחרי ההרשמה תקבלו את הקובץ למייל 💚</p>
-              <p class="form-message" id="formMessage" role="status">תודה! הטופס עובד בדף. כדי לשלוח מייל אמיתי צריך לחבר אותו למערכת דיוור.</p>
-            </form>
+            <div id="leadForm" class="smoove-form-wrap" aria-label="טופס קבלת הקובץ החינמי">
+              <iframe
+                title="טופס הרשמה לקבלת דף הצביעה"
+                width="100%"
+                height="245"
+                src="https://embed.vp4.me/LandingPage,2a6e860d-a1d9-4c3a-8e5c-49acf6babb83,611269.aspx?r=1009"
+                frameborder="0"
+                allowfullscreen
+                class="embediframe smoove-iframe"
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation allow-top-navigation-by-user-activation">
+              </iframe>
+            </div>
+            <p class="note">מיד אחרי ההרשמה תקבלו את הקובץ למייל 💚</p>
           </section>
         </div>
       </section>
@@ -664,11 +692,9 @@
         <img class="mini-character" src="assets/pea-character.jpg" alt="דמות האפונה מחייכת" />
         <div class="final-content">
           <h2 id="final-title">הכניסו מייל וקבלו עכשיו את הקובץ החינמי</h2>
-          <form class="compact-form" action="#leadForm" onsubmit="event.preventDefault(); document.getElementById('name').focus(); window.scrollTo({top: 0, behavior: 'smooth'});">
-            <input type="text" placeholder="שם" aria-label="שם" />
-            <input type="email" placeholder="אימייל" aria-label="אימייל" />
-            <button class="button" type="submit">אני רוצה את הפעילות</button>
-          </form>
+          <div class="compact-form compact-cta">
+            <a class="button button-link" href="#signup">אני רוצה את הפעילות</a>
+          </div>
         </div>
       </section>
 
@@ -678,21 +704,6 @@
     </div>
   </main>
 
-  <script>
-    const form = document.getElementById('leadForm');
-    const message = document.getElementById('formMessage');
-
-    form.addEventListener('submit', function (event) {
-      if (form.dataset.demo === 'true') {
-        event.preventDefault();
-        if (!form.checkValidity()) {
-          form.reportValidity();
-          return;
-        }
-        message.classList.add('is-visible');
-        form.querySelector('button[type="submit"]').textContent = 'תודה! הפרטים נקלטו';
-      }
-    });
-  </script>
+  <script type="text/javascript" src="https://embed.vp4.me/core/embd.min.js?v=20260601213256"></script>
 </body>
 </html>
