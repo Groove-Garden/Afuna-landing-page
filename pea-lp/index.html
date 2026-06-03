@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>גינה של גרוב | מוזיקה, ירקות ודף צביעה</title>
+  <meta name="description" content="ברוכים הבאים לגינה של גרוב: עולם מוזיקלי מצויר לילדים ולהורים, עם ירקות, שירים, קליפים ודף צביעה של אפי האפונה להורדה." />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Varela+Round&display=swap");
+    :root {
+      --bg: #fff8e9;
+      --paper: #fffdf6;
+      --paper-2: #fff4cf;
+      --green: #2f7a3d;
+      --green-dark: #19552a;
+      --green-soft: #e7f2df;
+      --mint: #dff0e1;
+      --ink: #3f382e;
+      --muted: #71695f;
+      --line: #c7d8ba;
+      --orange: #ef9b38;
+      --pink: #e45a86;
+      --yellow: #ffe27a;
+      --shadow: 0 18px 46px rgba(45, 66, 36, 0.13);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(86, 148, 66, 0.08), transparent 28%),
+        radial-gradient(circle at 86% 22%, rgba(239, 155, 56, 0.10), transparent 24%),
+        linear-gradient(180deg, #fff9ec 0%, #fff5dd 52%, #fff8e9 100%);
+      font-family: "Rubik", Arial, "Noto Sans Hebrew", "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(80, 60, 30, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(80, 60, 30, 0.025) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mix-blend-mode: multiply;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .page {
+      position: relative;
+      overflow: hidden;
+      padding: 24px 16px 56px;
+    }
+
+    .container {
+      width: min(100%, var(--max));
+      margin-inline: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: min(660px, 92vw);
+      margin: 0 auto 16px;
+      filter: drop-shadow(0 7px 14px rgba(56, 64, 35, 0.10));
+    }
+
+    .hero {
+      text-align: center;
+      margin: 0 auto;
+      padding: 10px 0 18px;
+    }
+
+    h1,
+    .hero-strip,
+    .intro-card h2,
+    .highlight-card,
+    .section-title,
+    .video-card h3,
+    .signup-card h2,
+    .footer-stage-title,
+    .footer-strip {
+      font-family: "Varela Round", "Rubik", Arial, sans-serif;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      font-weight: 900;
+    }
+
+    .hero-strip {
+      display: inline-block;
+      margin: 0 auto 16px;
+      padding: 10px 28px 13px;
+      color: var(--ink);
+      background: linear-gradient(90deg, transparent 0, rgba(255, 226, 122, 0.92) 8%, rgba(255, 226, 122, 0.92) 92%, transparent 100%);
+      font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+      font-weight: 900;
+      transform: rotate(-0.5deg);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 24px;
+      padding: 22px 0 26px;
+      border-top: 2px dashed rgba(47, 122, 61, 0.18);
+      border-bottom: 2px dashed rgba(47, 122, 61, 0.18);
+    }
+
+    .intro-card {
+      position: relative;
+      min-height: 220px;
+      padding: 20px 18px;
+      text-align: center;
+      background: rgba(255,253,246,0.62);
+      border-radius: 22px;
+      border: 1px solid rgba(47, 122, 61, 0.14);
+    }
+
+    .intro-card::after {
+      content: attr(data-icon);
+      position: absolute;
+      top: -18px;
+      inset-inline-start: 18px;
+      font-size: 2rem;
+      filter: drop-shadow(0 4px 4px rgba(80, 75, 40, 0.08));
+    }
+
+    .intro-card h2 {
+      margin: 0 0 10px;
+      color: var(--green-dark);
+      font-size: clamp(1.18rem, 2vw, 1.45rem);
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .intro-card p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .highlight-card {
+      margin: 34px auto 0;
+      width: min(940px, 100%);
+      padding: 22px clamp(20px, 4vw, 42px);
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(236,247,222,0.92), rgba(255,253,246,0.84));
+      border: 1px solid rgba(47, 122, 61, 0.20);
+      box-shadow: 0 12px 32px rgba(64, 80, 46, 0.08);
+      text-align: center;
+      font-weight: 800;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      color: var(--green-dark);
+    }
+
+    .section {
+      margin-top: clamp(30px, 5vw, 54px);
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      color: var(--green);
+      text-align: center;
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      font-weight: 900;
+    }
+
+    .video-panel {
+      padding: clamp(18px, 3vw, 28px);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255, 253, 246, 0.78), rgba(255,244,207,0.62));
+      border: 1px solid rgba(239, 155, 56, 0.32);
+      box-shadow: var(--shadow);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(18px, 3vw, 30px);
+    }
+
+    .video-card h3 {
+      margin: 0 0 10px;
+      color: var(--green-dark);
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .video-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #1f1f1f;
+      border: 8px solid #fff;
+      box-shadow: 0 14px 28px rgba(61, 81, 43, 0.12);
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+
+    .video-fallback {
+      display: block;
+      width: fit-content;
+      margin: 12px auto 0;
+      padding: 8px 16px 10px;
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: rgba(255, 226, 122, 0.82);
+      border: 1px solid rgba(47, 122, 61, 0.14);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 0.95rem;
+    }
+
+    .video-fallback:hover { filter: saturate(1.08); transform: translateY(-1px); }
+
+    .download-section {
+      display: grid;
+      grid-template-columns: minmax(230px, 0.85fr) minmax(300px, 1.15fr);
+      gap: clamp(20px, 4vw, 40px);
+      align-items: center;
+      padding: clamp(20px, 4vw, 36px);
+      border-radius: var(--radius-xl);
+      background: rgba(255, 253, 246, 0.78);
+      border: 1px solid rgba(47, 122, 61, 0.18);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .pea-side {
+      display: grid;
+      grid-template-columns: 0.85fr 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .pea-character {
+      width: min(210px, 42vw);
+      border-radius: 26px;
+      transform: rotate(-1.6deg);
+      border: 8px solid #fff;
+      background: #fff;
+      box-shadow: 0 14px 30px rgba(61, 81, 43, 0.12);
+    }
+
+    .paper-preview {
+      display: grid;
+      gap: 10px;
+    }
+
+    .paper-preview img {
+      width: min(150px, 32vw);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(61, 81, 43, 0.15);
+      border: 1px solid #eee5d7;
+      transform: rotate(-3deg);
+    }
+
+    .paper-preview img:nth-child(2) {
+      transform: rotate(4deg);
+      margin-inline-start: 38px;
+      margin-top: -28px;
+    }
+
+    .signup-card {
+      padding: clamp(18px, 3vw, 30px);
+      border-radius: 28px;
+      background: linear-gradient(180deg, #fffef9, #fff9ed);
+      border: 1px solid rgba(47, 122, 61, 0.28);
+      box-shadow: 0 14px 36px rgba(42, 82, 40, 0.10);
+    }
+
+    .signup-card h2 {
+      margin: 0 0 6px;
+      color: var(--green);
+      font-size: clamp(1.65rem, 3.5vw, 2.7rem);
+      line-height: 1.14;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .signup-card .sub {
+      margin: 0 0 18px;
+      color: var(--ink);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .smoove-form-wrap {
+      width: 100%;
+      max-width: 470px;
+      margin: 0 auto;
+      display: grid;
+      justify-items: center;
+      overflow: hidden;
+      border-radius: 18px;
+      background: transparent;
+    }
+
+    .smoove-form-wrap iframe,
+    .smoove-iframe {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: 285px;
+      border: 0 !important;
+      display: block;
+      margin: 0 auto;
+      background: transparent;
+    }
+
+    .form-note {
+      margin: 12px 0 0;
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+
+
+    .footer-stage {
+      position: relative;
+      margin-top: 34px;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(47, 122, 61, 0.22);
+      background: rgba(255, 253, 246, 0.82);
+      box-shadow: var(--shadow);
+    }
+
+    .footer-stage img {
+      width: 100%;
+      aspect-ratio: 16 / 7.4;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      filter: saturate(1.04) contrast(1.02);
+    }
+
+    .footer-stage-caption {
+      position: static;
+      display: flex;
+      justify-content: center;
+      padding: 16px 18px 18px;
+      background: rgba(255, 253, 246, 0.92);
+    }
+
+    .footer-stage-title {
+      display: inline-block;
+      max-width: min(92%, 780px);
+      padding: 12px 30px 14px;
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: rgba(255, 226, 122, 0.94);
+      border: 1px solid rgba(47, 122, 61, 0.18);
+      box-shadow: 0 12px 24px rgba(45, 66, 36, 0.16);
+      font-size: clamp(1.05rem, 2.2vw, 1.55rem);
+      font-weight: 900;
+      text-align: center;
+    }
+
+
+    footer {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .footer-strip {
+      display: inline-block;
+      padding: 12px 34px 14px;
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: linear-gradient(90deg, transparent 0, rgba(255,226,122,0.86) 8%, rgba(255,226,122,0.86) 92%, transparent 100%);
+      font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+      font-weight: 900;
+    }
+
+    .doodle {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.9;
+      font-weight: 900;
+    }
+
+    .doodle.one { top: 260px; right: 5%; color: var(--pink); font-size: 2rem; transform: rotate(-18deg); }
+    .doodle.two { top: 500px; left: 7%; color: var(--orange); font-size: 2.4rem; transform: rotate(12deg); }
+    .doodle.three { bottom: 90px; right: 8%; color: var(--green); font-size: 2.4rem; transform: rotate(10deg); }
+
+    @media (max-width: 920px) {
+      .intro-grid { grid-template-columns: 1fr; gap: 14px; }
+      .intro-card { min-height: auto; }
+      .video-grid { grid-template-columns: 1fr; }
+      .download-section { grid-template-columns: 1fr; }
+      .pea-side { max-width: 520px; margin-inline: auto; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 16px 10px 40px; }
+      .logo { width: min(470px, 96vw); margin-bottom: 8px; }
+      .hero-strip { padding-inline: 16px; }
+      .intro-card { padding: 18px 14px; }
+      .highlight-card { padding: 18px 16px; }
+      .video-panel { padding: 14px; border-radius: 24px; }
+      .video-frame { border-width: 5px; border-radius: 16px; }
+      .download-section { padding: 16px; border-radius: 24px; }
+      .pea-side { grid-template-columns: 1fr; justify-items: center; }
+      .paper-preview { grid-template-columns: repeat(2, auto); }
+      .paper-preview img { width: min(120px, 38vw); }
+      .paper-preview img:nth-child(2) { margin: 0; }
+      .smoove-form-wrap iframe, .smoove-iframe { min-height: 310px; }
+      .footer-strip { border-radius: 22px; padding-inline: 18px; }
+      .footer-stage { border-radius: 24px; margin-top: 26px; }
+      .footer-stage img { aspect-ratio: 1.22 / 1; object-position: 54% center; }
+      .footer-stage-caption { padding: 12px; }
+      .footer-stage-title { border-radius: 22px; padding: 10px 16px 12px; font-size: 1rem; }
+      .doodle { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <span class="doodle one">✿</span>
+    <span class="doodle two">♫</span>
+    <span class="doodle three">☘</span>
+
+    <div class="container">
+      <header class="hero">
+        <img class="logo" src="assets/logo-transparent.png" alt="גינה של גרוב" />
+        <h1>ברוכים הבאים לגינה של גרוב!</h1>
+        <div class="hero-strip">אנחנו להקה. אנחנו ירקות. ויש לנו תוכנית.</div>
+      </header>
+
+      <section class="intro-grid" aria-label="מה זה גינה של גרוב">
+        <article class="intro-card" data-icon="🎵">
+          <h2>מה קורה כשירקות מחליטים לפתוח להקה?</h2>
+          <p>בהתחלה כולם צוחקים.<br>אחר כך הם שומעים את הפזמון.<br>ואז מישהו מבקש עוד פעם את השיר על האפונה.</p>
+        </article>
+
+        <article class="intro-card" data-icon="⭐">
+          <h2>הגינה הזאת יצאה משליטה וזה נהדר</h2>
+          <p>האפונה שרה, הגזר מתאמן על בס, הבטטה שובר מקצבים ואף אחד לא זוכר מי הביא את הכבל מאריך.</p>
+        </article>
+
+        <article class="intro-card" data-icon="⚡">
+          <h2>גזר מנגן על בס</h2>
+          <p>זה לא בדיחה — זה ליהוק.<br>גינה של גרוב — מוזיקה, ירקות וחלומות גדולים מדי לעציץ.</p>
+        </article>
+      </section>
+
+      <section class="highlight-card" aria-label="הבטחת המותג">
+        אנחנו כאן כדי לעשות לילדים שמח, להזכיר להורים שתוכן ילדים יכול להיות גם כיף בשבילם, ולתת לאפונה את הקריירה המוזיקלית שמגיעה לה.
+      </section>
+
+      <section class="section video-panel" aria-labelledby="videos-title">
+        <h2 class="section-title" id="videos-title">הכירו את הגינה</h2>
+        <div class="video-grid">
+          <article class="video-card">
+            <h3>תנו לגדול בשקט — הקליפ הרשמי 🎵</h3>
+            <div class="video-frame">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/YmeF4gB36F8?si=OAd_EvMePqWp2PY3&rel=0&modestbranding=1&playsinline=1"
+                title="גינה של גרוב - תנו לגדול בשקט"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <a class="video-fallback" href="https://www.youtube.com/watch?v=YmeF4gB36F8&list=RDYmeF4gB36F8&start_radio=1" target="_blank" rel="noopener">אם הנגן עושה בעיות — פותחים ביוטיוב</a>
+          </article>
+
+          <article class="video-card">
+            <h3>עובדות על אפונה — שווה צפייה 🌿</h3>
+            <div class="video-frame">
+              <!-- החליפו את REPLACE_PEA_FACTS_VIDEO_ID במזהה הסרטון ביוטיוב של “עובדות על אפונה” -->
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/REPLACE_PEA_FACTS_VIDEO_ID?rel=0&modestbranding=1&playsinline=1"
+                title="גינה של גרוב - עובדות על אפונה"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section download-section" id="download" aria-labelledby="download-title">
+        <div class="pea-side" aria-hidden="true">
+          <img class="pea-character" src="assets/pea-character.jpg" alt="" />
+          <div class="paper-preview">
+            <img src="assets/preview-coloring.jpg" alt="" />
+            <img src="assets/pea-plant.jpg" alt="" />
+          </div>
+        </div>
+
+        <section class="signup-card" aria-labelledby="download-title">
+          <h2 id="download-title">רוצים דף צביעה וגזירה של אפי האפונה?</h2>
+          <p class="sub">השאירו מייל וקבלו אותו מיד למייל!</p>
+          <!--
+            צבעים מומלצים להגדרה בתוך Smoove כדי שהטופס ישתלב בדף:
+            רקע הטופס: #fff9ed
+            רקע כללי/שקוף אם אפשר: transparent
+            צבע כפתור: #2f7a3d
+            צבע טקסט: #3f382e
+          -->
+          <div class="smoove-form-wrap" aria-label="טופס הרשמה לקבלת דף הצביעה">
+            <iframe
+              title="טופס הרשמה לקבלת דף הצביעה"
+              width="100%"
+              height="300"
+              src="https://embed.vp4.me/LandingPage,2a6e860d-a1d9-4c3a-8e5c-49acf6babb83,611269.aspx?r=1009"
+              frameborder="0"
+              allowfullscreen
+              class="embediframe smoove-iframe"
+              sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation allow-top-navigation-by-user-activation">
+            </iframe>
+          </div>
+          <p class="form-note">לא מציפים. רק עדכונים על שירים חדשים, סרטונים וכיף מהגינה.</p>
+        </section>
+      </section>
+
+      <section class="footer-stage" aria-label="גינה של גרוב בהופעה">
+        <img src="assets/live-show.jpg" alt="ציור של להקת גינה של גרוב בהופעה מול קהל ירקות" />
+        <div class="footer-stage-caption">
+          <div class="footer-stage-title">גינה של גרוב — המקום שבו ירקות עולים לבמה 🌱</div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-strip">© גינה של גרוב</div>
+      </footer>
+    </div>
+  </main>
+
+  <script type="text/javascript" src="https://embed.vp4.me/core/embd.min.js?v=20260601213256"></script>
+</body>
+</html>
