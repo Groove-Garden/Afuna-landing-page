@@ -5,24 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>גינה של גרוב | מוזיקה, ירקות ודף צביעה</title>
+  <!-- גרסה ירוקה: אותה פריסה ותוכן, פלטת צבעים ירוקה/טבעית -->
   <meta name="description" content="ברוכים הבאים לגינה של גרוב: עולם מוזיקלי מצויר לילדים ולהורים, עם ירקות, שירים, קליפים ודף צביעה של אפי האפונה להורדה." />
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Varela+Round&display=swap");
     :root {
-      --bg: #fff8e9;
-      --paper: #fffdf6;
-      --paper-2: #fff4cf;
+      --bg: #f4fae8;
+      --paper: #fbfff4;
+      --paper-2: #eaf7cf;
       --green: #2f7a3d;
-      --green-dark: #19552a;
-      --green-soft: #e7f2df;
-      --mint: #dff0e1;
-      --ink: #3f382e;
-      --muted: #71695f;
-      --line: #c7d8ba;
-      --orange: #ef9b38;
-      --pink: #e45a86;
-      --yellow: #ffe27a;
-      --shadow: 0 18px 46px rgba(45, 66, 36, 0.13);
+      --green-dark: #164d2a;
+      --green-soft: #e2f3d3;
+      --mint: #d9efd8;
+      --ink: #34412f;
+      --muted: #68735f;
+      --line: #a8c990;
+      --orange: #d99a33;
+      --pink: #d94f79;
+      --yellow: #ffe58a;
+      --leaf-light: #f3fbe6;
+      --leaf-mid: #dcefc4;
+      --leaf-wash: #eef8de;
+      --shadow: 0 18px 46px rgba(35, 82, 40, 0.15);
       --radius-xl: 34px;
       --radius-lg: 24px;
       --radius-md: 16px;
@@ -36,9 +40,10 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(circle at 10% 8%, rgba(86, 148, 66, 0.08), transparent 28%),
-        radial-gradient(circle at 86% 22%, rgba(239, 155, 56, 0.10), transparent 24%),
-        linear-gradient(180deg, #fff9ec 0%, #fff5dd 52%, #fff8e9 100%);
+        radial-gradient(circle at 10% 8%, rgba(86, 148, 66, 0.16), transparent 28%),
+        radial-gradient(circle at 88% 20%, rgba(255, 229, 138, 0.22), transparent 25%),
+        radial-gradient(circle at 50% 95%, rgba(47, 122, 61, 0.10), transparent 34%),
+        linear-gradient(180deg, #fbfff1 0%, #eef8df 48%, #fff7df 100%);
       font-family: "Rubik", Arial, "Noto Sans Hebrew", "Segoe UI", sans-serif;
       line-height: 1.55;
     }
@@ -48,10 +53,10 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.22;
+      opacity: 0.19;
       background-image:
-        linear-gradient(rgba(80, 60, 30, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(80, 60, 30, 0.025) 1px, transparent 1px);
+        linear-gradient(rgba(40, 92, 45, 0.040) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(90, 68, 28, 0.024) 1px, transparent 1px);
       background-size: 34px 34px;
       mix-blend-mode: multiply;
     }
@@ -110,7 +115,7 @@
       margin: 0 auto 16px;
       padding: 10px 28px 13px;
       color: var(--ink);
-      background: linear-gradient(90deg, transparent 0, rgba(255, 226, 122, 0.92) 8%, rgba(255, 226, 122, 0.92) 92%, transparent 100%);
+      background: linear-gradient(90deg, transparent 0, rgba(255, 229, 138, 0.86) 8%, rgba(226, 243, 211, 0.96) 50%, rgba(255, 229, 138, 0.86) 92%, transparent 100%);
       font-size: clamp(1.1rem, 2.2vw, 1.55rem);
       font-weight: 900;
       transform: rotate(-0.5deg);
@@ -131,9 +136,9 @@
       min-height: 220px;
       padding: 20px 18px;
       text-align: center;
-      background: rgba(255,253,246,0.62);
+      background: rgba(251, 255, 244, 0.76);
       border-radius: 22px;
-      border: 1px solid rgba(47, 122, 61, 0.14);
+      border: 1px solid rgba(47, 122, 61, 0.18);
     }
 
     .intro-card::after {
@@ -164,7 +169,7 @@
       width: min(940px, 100%);
       padding: 22px clamp(20px, 4vw, 42px);
       border-radius: 26px;
-      background: linear-gradient(180deg, rgba(236,247,222,0.92), rgba(255,253,246,0.84));
+      background: linear-gradient(180deg, rgba(226,243,211,0.96), rgba(251,255,244,0.88));
       border: 1px solid rgba(47, 122, 61, 0.20);
       box-shadow: 0 12px 32px rgba(64, 80, 46, 0.08);
       text-align: center;
@@ -190,8 +195,8 @@
     .video-panel {
       padding: clamp(18px, 3vw, 28px);
       border-radius: var(--radius-xl);
-      background: linear-gradient(180deg, rgba(255, 253, 246, 0.78), rgba(255,244,207,0.62));
-      border: 1px solid rgba(239, 155, 56, 0.32);
+      background: linear-gradient(180deg, rgba(251,255,244,0.88), rgba(226,243,211,0.70));
+      border: 1px solid rgba(47, 122, 61, 0.24);
       box-shadow: var(--shadow);
     }
 
@@ -251,7 +256,7 @@
       align-items: center;
       padding: clamp(20px, 4vw, 36px);
       border-radius: var(--radius-xl);
-      background: rgba(255, 253, 246, 0.78);
+      background: rgba(251, 255, 244, 0.84);
       border: 1px solid rgba(47, 122, 61, 0.18);
       box-shadow: var(--shadow);
       overflow: hidden;
@@ -296,7 +301,7 @@
     .signup-card {
       padding: clamp(18px, 3vw, 30px);
       border-radius: 28px;
-      background: linear-gradient(180deg, #fffef9, #fff9ed);
+      background: linear-gradient(180deg, #fbfff4, #f0f8e1);
       border: 1px solid rgba(47, 122, 61, 0.28);
       box-shadow: 0 14px 36px rgba(42, 82, 40, 0.10);
     }
@@ -354,7 +359,7 @@
       overflow: hidden;
       border-radius: var(--radius-xl);
       border: 1px solid rgba(47, 122, 61, 0.22);
-      background: rgba(255, 253, 246, 0.82);
+      background: rgba(251, 255, 244, 0.86);
       box-shadow: var(--shadow);
     }
 
@@ -372,7 +377,7 @@
       display: flex;
       justify-content: center;
       padding: 16px 18px 18px;
-      background: rgba(255, 253, 246, 0.92);
+      background: rgba(251, 255, 244, 0.94);
     }
 
     .footer-stage-title {
@@ -381,7 +386,7 @@
       padding: 12px 30px 14px;
       border-radius: 999px;
       color: var(--green-dark);
-      background: rgba(255, 226, 122, 0.94);
+      background: linear-gradient(90deg, rgba(255, 229, 138, 0.92), rgba(226, 243, 211, 0.96));
       border: 1px solid rgba(47, 122, 61, 0.18);
       box-shadow: 0 12px 24px rgba(45, 66, 36, 0.16);
       font-size: clamp(1.05rem, 2.2vw, 1.55rem);
@@ -400,7 +405,7 @@
       padding: 12px 34px 14px;
       border-radius: 999px;
       color: var(--green-dark);
-      background: linear-gradient(90deg, transparent 0, rgba(255,226,122,0.86) 8%, rgba(255,226,122,0.86) 92%, transparent 100%);
+      background: linear-gradient(90deg, transparent 0, rgba(226,243,211,0.96) 8%, rgba(255,229,138,0.82) 50%, rgba(226,243,211,0.96) 92%, transparent 100%);
       font-size: clamp(1.1rem, 2.2vw, 1.55rem);
       font-weight: 900;
     }
@@ -415,6 +420,113 @@
     .doodle.one { top: 260px; right: 5%; color: var(--pink); font-size: 2rem; transform: rotate(-18deg); }
     .doodle.two { top: 500px; left: 7%; color: var(--orange); font-size: 2.4rem; transform: rotate(12deg); }
     .doodle.three { bottom: 90px; right: 8%; color: var(--green); font-size: 2.4rem; transform: rotate(10deg); }
+
+
+    .top-video-section {
+      width: min(760px, 100%);
+      margin: 8px auto 24px;
+      padding: clamp(12px, 2vw, 18px);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(251,255,244,0.92), rgba(221,242,204,0.76));
+      border: 1px solid rgba(47, 122, 61, 0.20);
+      box-shadow: 0 12px 30px rgba(64, 80, 46, 0.08);
+    }
+
+    .top-video-card h3 {
+      margin: 0 0 10px;
+      color: var(--green-dark);
+      font-family: "Varela Round", "Rubik", Arial, sans-serif;
+      font-size: clamp(1.05rem, 2vw, 1.42rem);
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .single-video {
+      width: min(850px, 100%);
+      margin-inline: auto;
+    }
+
+    .download-preview {
+      display: grid;
+      gap: 14px;
+      align-content: center;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .download-preview img {
+      width: min(440px, 100%);
+      border-radius: 28px;
+      filter: drop-shadow(0 16px 28px rgba(61, 81, 43, 0.16));
+    }
+
+    .download-preview-caption {
+      width: fit-content;
+      max-width: 100%;
+      padding: 8px 16px 10px;
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: linear-gradient(90deg, rgba(255, 229, 138, 0.86), rgba(226, 243, 211, 0.94));
+      border: 1px solid rgba(47, 122, 61, 0.14);
+      font-family: "Varela Round", "Rubik", Arial, sans-serif;
+      font-weight: 900;
+    }
+
+    .creator-section {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(20px, 4vw, 42px);
+      align-items: center;
+      margin-top: 34px;
+      padding: clamp(22px, 4vw, 38px);
+      border-radius: var(--radius-xl);
+      background: rgba(251, 255, 244, 0.86);
+      border: 1px solid rgba(47, 122, 61, 0.18);
+      box-shadow: var(--shadow);
+    }
+
+    .creator-copy h2 {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-family: "Varela Round", "Rubik", Arial, sans-serif;
+      font-size: clamp(1.65rem, 3.4vw, 2.7rem);
+      line-height: 1.15;
+      font-weight: 900;
+    }
+
+    .creator-copy p {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: clamp(1rem, 1.7vw, 1.18rem);
+    }
+
+    .creator-copy .answer {
+      color: var(--green-dark);
+      font-weight: 900;
+      font-family: "Varela Round", "Rubik", Arial, sans-serif;
+    }
+
+    .creator-photo-slot {
+      min-height: 280px;
+      padding: 12px;
+      border-radius: 28px;
+      background: #fbfff4;
+      border: 1px solid rgba(47, 122, 61, 0.20);
+      box-shadow: 0 16px 34px rgba(61, 81, 43, 0.12);
+      overflow: hidden;
+      transform: rotate(-1deg);
+    }
+
+    .creator-photo-slot img {
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: 50% 38%;
+      border-radius: 22px;
+      border: 1px solid rgba(47, 122, 61, 0.12);
+    }
 
     @media (max-width: 920px) {
       .intro-grid { grid-template-columns: 1fr; gap: 14px; }
@@ -443,6 +555,11 @@
       .footer-stage img { aspect-ratio: 1.22 / 1; object-position: 54% center; }
       .footer-stage-caption { padding: 12px; }
       .footer-stage-title { border-radius: 22px; padding: 10px 16px 12px; font-size: 1rem; }
+      .top-video-section { margin-top: 4px; margin-bottom: 18px; padding: 10px; border-radius: 22px; }
+      .download-preview img { width: min(360px, 100%); }
+      .creator-section { grid-template-columns: 1fr; text-align: center; padding: 18px; border-radius: 24px; }
+      .creator-photo-slot { min-height: auto; max-width: 420px; margin-inline: auto; transform: rotate(0deg); }
+      .creator-photo-slot img { min-height: auto; }
       .doodle { display: none; }
     }
   </style>
@@ -456,6 +573,26 @@
     <div class="container">
       <header class="hero">
         <img class="logo" src="assets/logo-transparent.png" alt="גינה של גרוב" />
+
+        <section class="top-video-section" aria-labelledby="pea-facts-title">
+          <article class="top-video-card">
+            <h3 id="pea-facts-title">מי את אפונה? עובדות על אפונה 🌿</h3>
+            <div class="video-frame">
+              <!-- החליפו את REPLACE_PEA_FACTS_VIDEO_ID במזהה הסרטון ביוטיוב של “עובדות על אפונה” -->
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/REPLACE_PEA_FACTS_VIDEO_ID?rel=0&modestbranding=1&playsinline=1"
+                title="גינה של גרוב - מי את אפונה?"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </article>
+        </section>
+
         <h1>ברוכים הבאים לגינה של גרוב!</h1>
         <div class="hero-strip">אנחנו להקה. אנחנו ירקות. ויש לנו תוכנית.</div>
       </header>
@@ -478,66 +615,43 @@
       </section>
 
       <section class="highlight-card" aria-label="הבטחת המותג">
-        אנחנו כאן כדי לעשות לילדים שמח, להזכיר להורים שתוכן ילדים יכול להיות גם כיף בשבילם, ולתת לאפונה את הקריירה המוזיקלית שמגיעה לה.
+        גינה של גרוב כאן כדי לעשות לילדים שמח, להזכיר להורים שתוכן ילדים יכול להיות גם כיף בשבילם, ולתת לאפונה את הקריירה המוזיקלית שמגיעה לה.
       </section>
 
-      <section class="section video-panel" aria-labelledby="videos-title">
-        <h2 class="section-title" id="videos-title">הכירו את הגינה</h2>
-        <div class="video-grid">
-          <article class="video-card">
-            <h3>תנו לגדול בשקט — הקליפ הרשמי 🎵</h3>
-            <div class="video-frame">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/YmeF4gB36F8?si=OAd_EvMePqWp2PY3&rel=0&modestbranding=1&playsinline=1"
-                title="גינה של גרוב - תנו לגדול בשקט"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-              </iframe>
-            </div>
-            <a class="video-fallback" href="https://www.youtube.com/watch?v=YmeF4gB36F8&list=RDYmeF4gB36F8&start_radio=1" target="_blank" rel="noopener">אם הנגן עושה בעיות — פותחים ביוטיוב</a>
-          </article>
-
-          <article class="video-card">
-            <h3>עובדות על אפונה — שווה צפייה 🌿</h3>
-            <div class="video-frame">
-              <!-- החליפו את REPLACE_PEA_FACTS_VIDEO_ID במזהה הסרטון ביוטיוב של “עובדות על אפונה” -->
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/REPLACE_PEA_FACTS_VIDEO_ID?rel=0&modestbranding=1&playsinline=1"
-                title="גינה של גרוב - עובדות על אפונה"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </article>
-        </div>
+      <section class="section video-panel single-video" aria-labelledby="clip-title">
+        <article class="video-card">
+          <h2 class="section-title" id="clip-title">תנו לגדול בשקט - הקליפ הרשמי 🎵</h2>
+          <div class="video-frame">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/YmeF4gB36F8?si=OAd_EvMePqWp2PY3&rel=0&modestbranding=1&playsinline=1"
+              title="גינה של גרוב - תנו לגדול בשקט"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </article>
       </section>
 
       <section class="section download-section" id="download" aria-labelledby="download-title">
-        <div class="pea-side" aria-hidden="true">
-          <img class="pea-character" src="assets/pea-character.jpg" alt="" />
-          <div class="paper-preview">
-            <img src="assets/preview-coloring.jpg" alt="" />
-            <img src="assets/pea-plant.jpg" alt="" />
-          </div>
+        <div class="download-preview" aria-label="תצוגה מקדימה של דף הפעילות">
+          <img src="assets/coloring-thumbnail.png" alt="תצוגה מקדימה של דף הצביעה והגזירה של אפי האפונה" />
+          <div class="download-preview-caption">דף צביעה וגזירה להדפסה בבית ✂️</div>
         </div>
 
         <section class="signup-card" aria-labelledby="download-title">
-          <h2 id="download-title">רוצים דף צביעה וגזירה של אפי האפונה?</h2>
-          <p class="sub">השאירו מייל וקבלו אותו מיד למייל!</p>
+          <h2 id="download-title">שרים, יוצרים ונהנים יחד</h2>
+          <p class="sub">השאירו מייל כדי להוריד את דף הפעילות של אפי, ולקבל את כל השירים והסרטונים החדשים ישירות אליכם, בלי תלות באלגוריתם.</p>
           <!--
-            צבעים מומלצים להגדרה בתוך Smoove כדי שהטופס ישתלב בדף:
-            רקע הטופס: #fff9ed
+            צבעים מומלצים להגדרה בתוך Smoove כדי שהטופס ישתלב בגרסה הירוקה:
+            רקע הטופס: #f0f8e1
             רקע כללי/שקוף אם אפשר: transparent
             צבע כפתור: #2f7a3d
-            צבע טקסט: #3f382e
+            צבע כפתור כהה/hover: #164d2a
+            צבע טקסט: #34412f
           -->
           <div class="smoove-form-wrap" aria-label="טופס הרשמה לקבלת דף הצביעה">
             <iframe
@@ -560,6 +674,20 @@
         <div class="footer-stage-caption">
           <div class="footer-stage-title">גינה של גרוב — המקום שבו ירקות עולים לבמה 🌱</div>
         </div>
+      </section>
+
+      <section class="creator-section" aria-labelledby="creator-title">
+        <div class="creator-copy">
+          <h2 id="creator-title">מי משקה את כל הדבר הזה?</h2>
+          <p>גינה של גרוב נולדה ממשאלת לב פשוטה: שיהיה תוכן ילדים איכותי בעברית - כזה שגם ההורים נהנים ממנו.</p>
+          <p>מאחורי הקלעים יש אבא, מוזיקאי, גיטריסט, מצייר סדרתי, ואדם שמאמין שילדים יכולים לקבל תוכן מוזיקלי, מצחיק וחכם.</p>
+          <p>מדי פעם הוא שואל את עצמו אם ירקות באמת צריכים מנהל להקה.</p>
+          <p class="answer">התשובה, אגב, היא כן.</p>
+          <p>הרעיון פשוט: לגדל תוכן ילדים עם מוזיקה אמיתית, דמויות משונות, וקצת יותר כבוד לאוזניים של ההורים.</p>
+        </div>
+        <figure class="creator-photo-slot" aria-label="תמונה מאחורי הקלעים של היוצר">
+          <img src="assets/creator-photo.jpg" alt="היוצר של גינה של גרוב מצייר ליד שולחן עבודה עם גיטרות ועפרונות" />
+        </figure>
       </section>
 
       <footer>
